@@ -1,9 +1,11 @@
 import React from 'react'
 
+import { Title } from './styles'
+
 function App() {
   return (
     <div>
-      Teste react
+      <Title>Titulo Styled Components</Title>
     </div>
   );
 }
