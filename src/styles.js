@@ -81,6 +81,7 @@ export const Search = styled.div`
 
 export const ChatList = styled.div`
     flex: 1;
+    border: none;
     background-color: #fff;
     overflow-y: auto;
     scrollbar-width: thin;
@@ -88,7 +89,7 @@ export const ChatList = styled.div`
 
     &::-webkit-scrollbar{
         width: 6px;
-        height: 6px
+        height: 6px;
     }
 
     &::-webkit-scrollbar-thumb{
@@ -99,5 +100,5 @@ export const ChatList = styled.div`
 
 
 export const ContentArea = styled.div`
-    
+    flex: 1;
 `

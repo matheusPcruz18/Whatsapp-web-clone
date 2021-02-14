@@ -7,7 +7,6 @@ export const ChatListCard = styled.div`
     height: 70px;
     background-color: ${props => props.theme.chatListBgColor};
 
-
     img{
         width: 50px;
         height: 50px;

@@ -9,6 +9,10 @@ import ChatIcon from '@material-ui/icons/Chat';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import SearchIcon from '@material-ui/icons/Search';
 
+//Components
+import ChatIntro from './Components/ChatIntro'
+import ChatWindow from './Components/ChatWindow'
+
 //Styled components
 import ChatListItem from './Components/ChatListItem'
 import {AppWindow, 
@@ -27,7 +31,13 @@ function App() {
 
     const [theme, setTheme] = useState('light')
 
-    const [chatList, setChatList] = useState([{}, {}, {}, {},{}, {}, {},{}, {}, {},{}, {}, {},])
+    const [chatList, setChatList] = useState([
+        {chatId: 1, title: 'Meu GitHub', imagem: 'https://avatars.githubusercontent.com/u/583231?s=460&u=a59fef2a493e2b67dd13754231daf220c82ba84d&v=4'}, 
+        {chatId: 2, title: 'Linkedin', imagem: 'https://neilpatel.com/wp-content/uploads/2017/05/LinkedIn.jpg'}, 
+        {chatId: 3, title: 'Sobre mim', imagem: 'https://retailx.com/wp-content/uploads/2019/12/iStock-476085198.jpg'}, 
+    ])
+
+    const [activeChat, setActiveChat] = useState({})
 
     const themeToggler = () => {
         theme === 'light' ? setTheme('dark') : setTheme('light')
@@ -63,12 +73,20 @@ function App() {
                         {chatList.map((item, key) => (
                             <ChatListItem
                                 key={key}
+                                Click={() => setActiveChat(chatList[key])}
                             />
                         ))}
                     </ChatList>
                 </Sidebar>
                 <ContentArea>
-                    Content Area
+                    {activeChat.chatId !== undefined && 
+                        <ChatWindow />
+                    }
+                    {activeChat.chatId === undefined && 
+                        <ChatIntro theme={theme} />
+                    }
+                    
+                    
                 </ContentArea>
             </AppWindow>
         </ThemeProvider>
