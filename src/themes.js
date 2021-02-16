@@ -14,6 +14,8 @@ export const lightTheme = {
     chatListHoverColor: '#EBEBEB',
     chatIntroImg: 'https://web.whatsapp.com/img/intro-connection-light_c98cc75f2aa905314d74375a975d2cf2.jpg',
     chatIntroBgColor: '#f8f9fa',
+
+    chatWindowBg: "url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')"
 }
 
 export const darkTheme = {
@@ -30,6 +32,8 @@ export const darkTheme = {
     chatListHoverColor: '#323739',
     chatIntroImg: 'https://web.whatsapp.com/img/intro-connection-dark_0ee01153183b5ebd9b296399cc2104b0.jpg',
     chatIntroBgColor: '#262d31',
+
+    chatWindowBg: "url('https://i.pinimg.com/originals/97/c0/07/97c00759d90d786d9b6096d274ad3e07.png')"
 }
 
 export const GlobalStyles = createGlobalStyle`

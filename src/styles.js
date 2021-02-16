@@ -9,14 +9,14 @@ export const AppWindow = styled.div`
 
 export const Sidebar = styled.div`
     width: 35%;
-    max-width: 415px;
     display: flex;
+    max-width: 415px;
     flex-direction: column;
     border-right: 1px solid #DDD;
     transition: all ease 0.3s;
 `
 
-export const Header = styled.div`
+export const HeaderSide = styled.div`
     background-color: ${props => props.theme.header};
     height: 60px;
     display: flex;

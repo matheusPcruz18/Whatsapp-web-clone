@@ -18,7 +18,7 @@ import ChatListItem from './Components/ChatListItem'
 import {AppWindow, 
         Sidebar, 
         ContentArea,
-        Header,
+        HeaderSide,
         HeaderButtons,
         Buttons,
         Search,
@@ -26,8 +26,6 @@ import {AppWindow,
      } from './styles'
 
 function App() {
-
-    //<button onClick={() => themeToggler()}>Change Theme</button>
 
     const [theme, setTheme] = useState('light')
 
@@ -43,12 +41,18 @@ function App() {
         theme === 'light' ? setTheme('dark') : setTheme('light')
     }
 
+    const [openSidebar, setOpenSidebar] = useState(true)
+
+    const closeOrOpenSidebar = () => {
+        setOpenSidebar(!openSidebar)
+    }
+
     return (
         <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
             <GlobalStyles/>
             <AppWindow>
-                <Sidebar>
-                    <Header>
+                <Sidebar open={openSidebar}>
+                    <HeaderSide>
                         <img src="https://i.pinimg.com/originals/d1/1a/45/d11a452f5ce6ab534e083cdc11e8035e.png" alt="avatar" />
                         <HeaderButtons>
                             <Buttons>
@@ -61,7 +65,7 @@ function App() {
                                 <MoreVertIcon/>
                             </Buttons>
                         </HeaderButtons>
-                    </Header>
+                    </HeaderSide>
                     <Search>
                         <div>
                             <Buttons>
@@ -74,6 +78,7 @@ function App() {
                         {chatList.map((item, key) => (
                             <ChatListItem
                                 key={key}
+                                data={item}
                                 active={activeChat.chatId === chatList[key].chatId}
                                 Click={() => setActiveChat(chatList[key])}
                             />
@@ -82,7 +87,7 @@ function App() {
                 </Sidebar>
                 <ContentArea>
                     {activeChat.chatId !== undefined && 
-                        <ChatWindow />
+                        <ChatWindow sidebar={closeOrOpenSidebar} />
                     }
                     {activeChat.chatId === undefined && 
                         <ChatIntro theme={theme} />

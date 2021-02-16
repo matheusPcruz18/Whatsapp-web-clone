@@ -8,18 +8,22 @@ import {ChatListCard,
 
 
 
-const ChatListItem = ({Click, active}) => {
+const ChatListItem = ({Click, active, data}) => {
+
+    const date = new Date()
+
+    const time = `${date.getHours()}:${date.getMinutes()}`
 
     return (
-        <ChatListCard onClick={Click} color={active ? true : false}>
+        <ChatListCard onClick={Click} color={active ? "true" : "false"}>
             <img 
-                src="https://i.pinimg.com/originals/d1/1a/45/d11a452f5ce6ab534e083cdc11e8035e.png" 
-                alt=""
+                src={data.imagem} 
+                alt="avatar"
             />
             <div className="lines">
                 <div className="line">
-                    <ChatListName>Matheus Pereira</ChatListName>
-                    <ChatListDate>18:30</ChatListDate>
+                    <ChatListName>{data.title}</ChatListName>
+                    <ChatListDate>{time}</ChatListDate>
                 </div>
                 <div className="line">
                     <LastMsg>
