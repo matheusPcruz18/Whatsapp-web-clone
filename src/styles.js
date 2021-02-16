@@ -82,7 +82,7 @@ export const Search = styled.div`
 export const ChatList = styled.div`
     flex: 1;
     border: none;
-    background-color: #fff;
+    background-color: ${props => props.theme.chatListBgColor};
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: rgba(0, 0, 0, 0.2);

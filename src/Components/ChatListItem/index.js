@@ -6,9 +6,12 @@ import {ChatListCard,
         LastMsg
 } from './style'
 
-const ChatListItem = () => {
+
+
+const ChatListItem = ({Click, active}) => {
+
     return (
-        <ChatListCard>
+        <ChatListCard onClick={Click} color={active ? true : false}>
             <img 
                 src="https://i.pinimg.com/originals/d1/1a/45/d11a452f5ce6ab534e083cdc11e8035e.png" 
                 alt=""
@@ -20,7 +23,7 @@ const ChatListItem = () => {
                 </div>
                 <div className="line">
                     <LastMsg>
-                        <p>Tenha um bom diaTenha um bom diaTenha um bom diaTenha um bom diaTenha um bom diaTenha um bom diaTenha um bom diaTenha um bom diaTenha um bom diaTenha um bom diaTenha um bom diaTenha um bom dia</p>
+                        <p>Tenha um bom diaTenha um bom dia</p>
                     </LastMsg>
                 </div>
             </div>

@@ -4,8 +4,11 @@ export const ChatListCard = styled.div`
     display: flex;
     cursor: pointer;
     align-items: center;
+    width: 100%;
     height: 70px;
-    background-color: ${props => props.theme.chatListBgColor};
+    transition: all ease 0.3s;
+    background-color: ${props => props.color ? props.theme.chatListBgColorOn : props.theme.chatListBgColorOff};
+
 
     img{
         width: 50px;

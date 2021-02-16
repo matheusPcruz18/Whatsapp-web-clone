@@ -42,6 +42,7 @@ function App() {
     const themeToggler = () => {
         theme === 'light' ? setTheme('dark') : setTheme('light')
     }
+
     return (
         <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
             <GlobalStyles/>
@@ -73,6 +74,7 @@ function App() {
                         {chatList.map((item, key) => (
                             <ChatListItem
                                 key={key}
+                                active={activeChat.chatId === chatList[key].chatId}
                                 Click={() => setActiveChat(chatList[key])}
                             />
                         ))}
