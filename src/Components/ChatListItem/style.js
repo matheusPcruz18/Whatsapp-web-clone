@@ -6,7 +6,7 @@ export const ChatListCard = styled.div`
     align-items: center;
     width: 100%;
     height: 70px;
-    transition: all ease 0.3s;
+    transition: all ease 0.50s;
     background-color: ${props => props.color === "true" ? props.theme.chatListBgColorOn : props.theme.chatListBgColorOff};
 
 

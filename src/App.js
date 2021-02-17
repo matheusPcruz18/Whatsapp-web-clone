@@ -92,8 +92,6 @@ function App() {
                     {activeChat.chatId === undefined && 
                         <ChatIntro theme={theme} />
                     }
-                    
-                    
                 </ContentArea>
             </AppWindow>
         </ThemeProvider>

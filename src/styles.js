@@ -8,12 +8,16 @@ export const AppWindow = styled.div`
 
 
 export const Sidebar = styled.div`
-    width: 35%;
+    width: 30%;
     display: flex;
     max-width: 415px;
     flex-direction: column;
     border-right: 1px solid #DDD;
     transition: all ease 0.3s;
+
+    @media (max-width: 768px){
+        width: 0%;
+    }
 `
 
 export const HeaderSide = styled.div`
@@ -101,4 +105,5 @@ export const ChatList = styled.div`
 
 export const ContentArea = styled.div`
     flex: 1;
+    position: relative;
 `

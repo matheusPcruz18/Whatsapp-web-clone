@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const ChatContainer = styled.div`
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
+    background-color: ${props => props.theme.chatWindowBgColor};
 `
 
 export const Header = styled.div`
@@ -12,7 +13,7 @@ export const Header = styled.div`
     border-bottom: 1px solid #CCC;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: top;
     background-color: ${props => props.theme.header};
 
     .left{
@@ -30,6 +31,7 @@ export const Header = styled.div`
             font-size: 17px;
             color: ${props => props.theme.primaryColor};
         }
+        
     }
     .right{
         display: flex;
@@ -47,8 +49,9 @@ export const Btn = styled.div`
     align-items: center;
     border-radius: 50%;
     cursor: pointer;
-    margin: 0 10px;
-    transition: all ease 0.3s;
+    margin-right: 15px;
+    transition: all ease 0.2s;
+    overflow: hidden;
 `
 
 export const Body = styled.div`
@@ -57,10 +60,75 @@ export const Body = styled.div`
     background-color: #E5DDD5;
     background-size: cover;
     background-position: center;
-    background-image: ${props => props.theme.chatWindowBg}
+    background-image: ${props => props.theme.chatWindowBg};
+`
+
+export const EmojiArea = styled.div`
+    height: 200px;
+    overflow-y: hidden;
+    transition: all ease 0.3s;
+
+    .emoji-picker-react{
+        width: auto;
+        background: none;
+        border: 0;
+    }
+    .emoji-picker-react .emoji-group:before{
+        background: none;
+        position: relative;
+    }
+    .emoji-categories{
+        button{
+            ${props => props.theme.emojiPickerCategories1};
+            ${props => props.theme.emojiPickerCategories2}
+        }
+    }
+
+    
 `
 
 export const Footer = styled.div`
+    height: 62px;
+    display: flex;
+    align-items: center;
+
+    .closeBtn{
+        margin-right: 6px;
+    }
+
+    .iconsLeft{
+        display: flex;
+        margin: 0 5px;
+
+        .footerBtn{
+            width: 27px;
+            height: 27px;
+        }
+        
+        .clip{
+            transform: rotate(45deg);
+        }
+
+    }
+    .inputArea{
+        flex: 1;
+    }
+    .iconsRight{
+        display: flex;
+        margin: 0 15px;
+    }
+`
+
+export const Input = styled.input`
+    flex: 1;
+    width: 100%;
+    height: 40px;
+    border: 0;
+    outline: 0;
+    border-radius: 50px;
+    font-size: 15px;
+    color: #4a4a4a;
+    padding-left: 15px;
 
 `
 
