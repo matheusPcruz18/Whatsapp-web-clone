@@ -2,15 +2,18 @@ import React from 'react'
 
 import { Container } from './style'
 
+import darkImg from '../../assets/darkImg.png'
+import lightImg from '../../assets/lightImg.png'
+
 const ChatIntro = ({theme, active}) => {
     return (
         <Container active={active}>
             {
                 theme === 'light' 
                 ?
-                <img src="https://web.whatsapp.com/img/intro-connection-light_c98cc75f2aa905314d74375a975d2cf2.jpg" alt="" />
+                <img src={lightImg} alt="" />
                 :
-                <img src="https://web.whatsapp.com/img/intro-connection-dark_0ee01153183b5ebd9b296399cc2104b0.jpg" alt="" />
+                <img src={darkImg} alt="" />
             }
             
             <h1>Mantenha seu celular conectado</h1>
