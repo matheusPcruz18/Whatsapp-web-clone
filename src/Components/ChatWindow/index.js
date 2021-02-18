@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 import EmojiPicker from 'emoji-picker-react'
 
@@ -25,7 +25,9 @@ import CloseIcon from '@material-ui/icons/Close';
 import SendIcon from '@material-ui/icons/Send';
 import MicIcon from '@material-ui/icons/Mic';
 
-const ChatWindow = () => {
+const ChatWindow = ({user, active}) => {
+
+    const body = useRef()
 
     let recognition = null
     let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
@@ -39,7 +41,32 @@ const ChatWindow = () => {
 
     const [text, setText] = useState('')
 
-    const [list, setList] = useState([{}, {}, {}])
+    const [list, setList] = useState([
+        {author: 123, body: 'bla bla bla'},
+        {author: 123, body: 'ha ha ha ha'},
+        {author: 1234, body: 'oi oi oi oi '},
+        {author: 123, body: 'bla bla bla'},
+        {author: 123, body: 'ha ha ha ha'},
+        {author: 1234, body: 'oi oi oi oi '},
+        {author: 123, body: 'bla bla bla'},
+        {author: 123, body: 'ha ha ha ha'},
+        {author: 1234, body: 'oi oi oi oi '},
+        {author: 123, body: 'bla bla bla'},
+        {author: 123, body: 'ha ha ha ha'},
+        {author: 1234, body: 'oi oi oi oi '},
+        {author: 123, body: 'bla bla bla'},
+        {author: 123, body: 'ha ha ha ha'},
+        {author: 1234, body: 'oi oi oi oi '},
+        {author: 123, body: 'bla bla bla'},
+        {author: 123, body: 'ha ha ha ha'},
+        {author: 1234, body: 'oi oi oi oi '},
+    ])
+
+    useEffect(() => {
+        if(body.current.scrollHeight > body.current.offsetHeight){
+            body.current.scrollTop = body.current.scrollHeight - body.current.offsetHeight
+        }
+    }, [list])
 
     const handleEmjiClick = (e, emojiObject) => {
         setText( text + emojiObject.emoji )
@@ -83,10 +110,14 @@ const ChatWindow = () => {
         */
     }
 
+
     return (
         <ChatContainer>
             <Header>
                 <div className="left">
+                    <Btn className="arrowBack" onClick={active}>
+                        <ArrowBackIcon/>
+                    </Btn>
                     <img src="https://i.pinimg.com/originals/d1/1a/45/d11a452f5ce6ab534e083cdc11e8035e.png" alt="" />
                     <div className="name">Matheus</div>
                 </div>
@@ -100,11 +131,12 @@ const ChatWindow = () => {
                 </div>
             </Header>
 
-            <Body>
+            <Body ref={body}>
                 {list.map((item, key) => (
                     <MessageItem
                         key={key}
                         data={item}
+                        user={user}
                     />
                 ))}
             </Body>

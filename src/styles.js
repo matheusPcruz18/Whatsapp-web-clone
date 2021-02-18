@@ -12,11 +12,13 @@ export const Sidebar = styled.div`
     display: flex;
     max-width: 415px;
     flex-direction: column;
-    border-right: 1px solid #DDD;
+    border-right: 1px solid ${props => props.theme.chatListBorderColor};
     transition: all ease 0.3s;
-
+    
     @media (max-width: 768px){
-        width: 0%;
+        width: ${props => props.active.chatId !== undefined && '0%'};
+        max-width: 100%;
+        width: ${props => props.active.chatId === undefined && '100%'};
     }
 `
 

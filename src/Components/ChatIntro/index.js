@@ -2,9 +2,9 @@ import React from 'react'
 
 import { Container } from './style'
 
-const ChatIntro = ({theme}) => {
+const ChatIntro = ({theme, active}) => {
     return (
-        <Container>
+        <Container active={active}>
             {
                 theme === 'light' 
                 ?

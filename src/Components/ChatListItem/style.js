@@ -15,6 +15,7 @@ export const ChatListCard = styled.div`
         height: 50px;
         border-radius: 50%;
         margin-left: 15px;
+        object-fit: cover;
     }
 
     .lines{

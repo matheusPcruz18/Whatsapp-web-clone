@@ -4,13 +4,14 @@ export const ChatContainer = styled.div`
     display: flex;
     flex-direction: column;
     height: 100vh;
+    transition: all ease 0.3s;
     background-color: ${props => props.theme.chatWindowBgColor};
 `
 
 export const Header = styled.div`
     width: 100%;
     height: 60px;
-    border-bottom: 1px solid #CCC;
+    border-bottom: 1px solid ${props => props.theme.chatListBorderColor};
     display: flex;
     justify-content: space-between;
     align-items: top;
@@ -24,12 +25,21 @@ export const Header = styled.div`
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            margin-left: 15px;
+            margin-left: 10px;
             margin-right: 15px;
         }
         .name{
             font-size: 17px;
             color: ${props => props.theme.primaryColor};
+        }
+        .arrowBack{
+            margin-right: -5px;
+            margin-left: 5px;
+            transition: all ease 0.3s;
+
+            @media (min-width: 768px){
+                width: 0px;    
+            }
         }
         
     }
@@ -61,6 +71,19 @@ export const Body = styled.div`
     background-size: cover;
     background-position: center;
     background-image: ${props => props.theme.chatWindowBg};
+    padding: 20px 30px;
+
+    scrollbar-width: thin;
+    scrollbar-color: ${props => props.theme.scrollbarColor};
+
+    &::-webkit-scrollbar{
+        width: 6px;
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background-color: ${props => props.theme.scrollbarColor};
+    }
 `
 
 export const EmojiArea = styled.div`
@@ -127,8 +150,9 @@ export const Input = styled.input`
     outline: 0;
     border-radius: 50px;
     font-size: 15px;
-    color: #4a4a4a;
+    color: ${props => props.theme.secundayColor};
     padding-left: 15px;
+    background-color: ${props => props.theme.input};
 
 `
 

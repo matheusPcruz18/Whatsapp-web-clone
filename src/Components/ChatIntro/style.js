@@ -9,6 +9,10 @@ export const Container = styled.div`
     justify-content: center;
     border-bottom: 6px solid #4adf83;
 
+    @media (max-width: 768px){
+        display: ${props => props.active.chatId === undefined && 'none'};
+    }
+
     img{
         width: 250px;
         height: auto;

@@ -5,6 +5,7 @@ import { lightTheme, darkTheme, GlobalStyles } from './themes'
 
 //Icons
 import Brightness4Icon from '@material-ui/icons/Brightness4';
+import Brightness7Icon from '@material-ui/icons/Brightness7';
 import ChatIcon from '@material-ui/icons/Chat';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import SearchIcon from '@material-ui/icons/Search';
@@ -41,22 +42,32 @@ function App() {
         theme === 'light' ? setTheme('dark') : setTheme('light')
     }
 
-    const [openSidebar, setOpenSidebar] = useState(true)
+    const [user, setUser] = useState({
+        id: 1234,
+        name: 'Matheus Pereira',
+        avatar: 'https://i.pinimg.com/originals/d1/1a/45/d11a452f5ce6ab534e083cdc11e8035e.png'
+    })
 
-    const closeOrOpenSidebar = () => {
-        setOpenSidebar(!openSidebar)
+    const closeChat = () => {
+        setActiveChat({})
     }
 
     return (
         <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
             <GlobalStyles/>
             <AppWindow>
-                <Sidebar open={openSidebar}>
+                <Sidebar active={activeChat} >
                     <HeaderSide>
-                        <img src="https://i.pinimg.com/originals/d1/1a/45/d11a452f5ce6ab534e083cdc11e8035e.png" alt="avatar" />
+                        <img src={user.avatar} alt="avatar" />
                         <HeaderButtons>
                             <Buttons>
-                                <Brightness4Icon onClick={themeToggler} />
+                                {
+                                    theme === 'light'
+                                    ?
+                                    <Brightness4Icon onClick={themeToggler} />
+                                    :
+                                    <Brightness7Icon onClick={themeToggler} />
+                                }
                             </Buttons>
                             <Buttons>
                                 <ChatIcon />
@@ -87,10 +98,13 @@ function App() {
                 </Sidebar>
                 <ContentArea>
                     {activeChat.chatId !== undefined && 
-                        <ChatWindow sidebar={closeOrOpenSidebar} />
+                        <ChatWindow 
+                            user={user}
+                            active={closeChat} 
+                        />
                     }
                     {activeChat.chatId === undefined && 
-                        <ChatIntro theme={theme} />
+                        <ChatIntro theme={theme} active={activeChat} />
                     }
                 </ContentArea>
             </AppWindow>
