@@ -45,21 +45,7 @@ const ChatWindow = ({data, active}) => {
         {author: 123, body: 'bla bla bla'},
         {author: 123, body: 'ha ha ha ha'},
         {author: 1234, body: 'oi oi oi oi '},
-        {author: 123, body: 'bla bla bla'},
-        {author: 123, body: 'ha ha ha ha'},
-        {author: 1234, body: 'oi oi oi oi '},
-        {author: 123, body: 'bla bla bla'},
-        {author: 123, body: 'ha ha ha ha'},
-        {author: 1234, body: 'oi oi oi oi '},
-        {author: 123, body: 'bla bla bla'},
-        {author: 123, body: 'ha ha ha ha'},
-        {author: 1234, body: 'oi oi oi oi '},
-        {author: 123, body: 'bla bla bla'},
-        {author: 123, body: 'ha ha ha ha'},
-        {author: 1234, body: 'oi oi oi oi '},
-        {author: 123, body: 'bla bla bla'},
-        {author: 123, body: 'ha ha ha ha'},
-        {author: 1234, body: 'oi oi oi oi '},
+        {author: 123, body: 'bla bla bla'}
     ])
 
     useEffect(() => {

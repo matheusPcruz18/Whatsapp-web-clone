@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+import bgLight from '../../assets/bgLight.png'
+import bgDark from '../../assets/bgDark.png'
+
+
 export const ChatContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -70,7 +74,7 @@ export const Body = styled.div`
     background-color: #E5DDD5;
     background-size: cover;
     background-position: center;
-    background-image: ${props => props.theme.chatWindowBg};
+    background: bgLight;
     padding: 20px 30px;
 
     scrollbar-width: thin;
