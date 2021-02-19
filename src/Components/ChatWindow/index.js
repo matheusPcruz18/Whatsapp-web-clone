@@ -25,7 +25,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import SendIcon from '@material-ui/icons/Send';
 import MicIcon from '@material-ui/icons/Mic';
 
-const ChatWindow = ({user, active}) => {
+const ChatWindow = ({data, active}) => {
 
     const body = useRef()
 
@@ -110,7 +110,6 @@ const ChatWindow = ({user, active}) => {
         */
     }
 
-
     return (
         <ChatContainer>
             <Header>
@@ -118,8 +117,8 @@ const ChatWindow = ({user, active}) => {
                     <Btn className="arrowBack" onClick={active}>
                         <ArrowBackIcon/>
                     </Btn>
-                    <img src="https://i.pinimg.com/originals/d1/1a/45/d11a452f5ce6ab534e083cdc11e8035e.png" alt="" />
-                    <div className="name">Matheus</div>
+                    <img src={data.imagem} alt="" />
+                    <div className="name">{data.title}</div>
                 </div>
                 <div className="right">
                     <Btn>
@@ -136,7 +135,7 @@ const ChatWindow = ({user, active}) => {
                     <MessageItem
                         key={key}
                         data={item}
-                        user={user}
+                        user={data.chatId}
                     />
                 ))}
             </Body>

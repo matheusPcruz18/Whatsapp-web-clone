@@ -98,10 +98,13 @@ function App() {
                 </Sidebar>
                 <ContentArea>
                     {activeChat.chatId !== undefined && 
-                        <ChatWindow 
-                            user={user}
-                            active={closeChat} 
-                        />
+                        chatList.map((key) => (
+                            <ChatWindow 
+                                key={key}
+                                data={activeChat}
+                                active={closeChat} 
+                            />
+                        ))
                     }
                     {activeChat.chatId === undefined && 
                         <ChatIntro theme={theme} active={activeChat} />
