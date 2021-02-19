@@ -42,10 +42,11 @@ const ChatWindow = ({data, active}) => {
     const [text, setText] = useState('')
 
     const [list, setList] = useState([
-        {author: 123, body: 'bla bla bla'},
-        {author: 123, body: 'ha ha ha ha'},
-        {author: 1234, body: 'oi oi oi oi '},
-        {author: 123, body: 'bla bla bla'}
+        {id: 1, author: 123, body: 'https://github.com/matheusPcruz18'},
+        {id: 2, author: 123, body: ' www.linkedin.com/in/matheus-p-77569b138'},
+        {id: 3, author: 123, body: 'Olá, meu nome é Matheus Pereira. Tenho 21 anos, São Sebastião - SP'},
+        {id: 3, author: 123, body: 'Sou formado em Informática para internet, pelo Instituto Federal de São Paulo'},
+        {id: 3, author: 123, body: 'E atualmente curso Análise e Desenvolvimentos de Sistemas'}
     ])
 
     useEffect(() => {
@@ -121,7 +122,8 @@ const ChatWindow = ({data, active}) => {
                     <MessageItem
                         key={key}
                         data={item}
-                        user={data.chatId}
+                        user={data.author}
+                        id={data.chatId}
                     />
                 ))}
             </Body>

@@ -7,12 +7,13 @@ import {ChatListCard,
 } from './style'
 
 
-
 const ChatListItem = ({Click, active, data}) => {
 
     const date = new Date()
+    const hour = date.getHours()
+    const min = date.getMinutes()
 
-    const time = `${date.getHours()}:${date.getMinutes()}`
+    const time = `${hour < 10 ? '0'+hour : hour}:${min < 10 ? '0' + min : min}`
 
     return (
         <ChatListCard onClick={Click} color={active ? "true" : "false"}>
@@ -27,7 +28,7 @@ const ChatListItem = ({Click, active, data}) => {
                 </div>
                 <div className="line">
                     <LastMsg>
-                        <p>Tenha um bom diaTenha um bom dia</p>
+                        <p>Teste</p>
                     </LastMsg>
                 </div>
             </div>

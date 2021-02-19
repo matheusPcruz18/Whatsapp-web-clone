@@ -74,7 +74,7 @@ export const Body = styled.div`
     background-color: #E5DDD5;
     background-size: cover;
     background-position: center;
-    background: bgLight;
+    background-image: url(${props => props.theme.chatWindowBg === 'light' ? bgLight : bgDark});
     padding: 20px 30px;
 
     scrollbar-width: thin;

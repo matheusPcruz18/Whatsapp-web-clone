@@ -20,7 +20,7 @@ export const Text = styled.div`
     margin: 5px 40px 5px 5px;
     color: #000;
 `
-export const Date = styled.div`
+export const DateTime = styled.div`
     font-size: 11px;
     color: #999;
     margin-right: 5px;
