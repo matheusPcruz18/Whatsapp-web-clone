@@ -51,8 +51,7 @@ function App() {
 
     const [user, setUser] = useState({
         id: 1234,
-        name: 'Matheus Pereira',
-        avatar: 'https://i.pinimg.com/originals/d1/1a/45/d11a452f5ce6ab534e083cdc11e8035e.png'
+        avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXrIBnP4Ppijsc0z3IRH6A6mQEs0OSaVlmFw&usqp=CAU'
     })
 
     const closeChat = () => {
