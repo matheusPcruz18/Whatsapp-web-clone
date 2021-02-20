@@ -28,7 +28,7 @@ const ChatListItem = ({Click, active, data}) => {
                 </div>
                 <div className="line">
                     <LastMsg>
-                        <p>Teste</p>
+                        <p>Clique para saber mais...</p>
                     </LastMsg>
                 </div>
             </div>

@@ -94,13 +94,10 @@ const ChatWindow = ({data, active}) => {
     }
 
     const handleSendClick = () => {
-        //const chatwind = document.getElementsByClassName("chatWindow--body")
-        /*if(text !== ''){
-            setUserMsg(<MessageItem msg={text} author={"user"} />)
-            setText('')
-            setEmojiOpen(false)
-        }
-        */
+        setEmojiOpen(false)
+        const a = {id: data.chatId, author: 1234, body: text}
+        list.push(a)
+        setText('')
     }
 
     return (
@@ -175,7 +172,7 @@ const ChatWindow = ({data, active}) => {
                     }
 
                     {text !== '' &&
-                    <Btn>
+                    <Btn onClick={handleSendClick}>
                         <SendIcon/>
                     </Btn>
                     }
