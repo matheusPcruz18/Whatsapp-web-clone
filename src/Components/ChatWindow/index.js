@@ -42,11 +42,17 @@ const ChatWindow = ({data, active}) => {
     const [text, setText] = useState('')
 
     const [list, setList] = useState([
+        {id: 0, author: 123, body: 'Bem vindo!'},
+        {id: 0, author: 123, body: 'Fiz este projeto baseado na versão Web do WhatsApp, guiado pelo professor Bonieky Lacerda'},
+        {id: 0, author: 123, body: 'Porém fui além e decidi implementar recursos como layout responsivo e um tema diferente para a versão "dark" 🌙'},
+        {id: 0, author: 123, body: 'Contando também com recurso de transcrição de fala usando o microfone, (indisponivel no navegador Firefox) 🎤'},
+        {id: 0, author: 123, body: 'E emojis usados pelo WhatsApp 🤓'},
+        {id: 0, author: 123, body: 'Obrigado pela visita, e sinta-se livre para me contactar nas minhas redes sociais!'},
         {id: 1, author: 123, body: 'https://github.com/matheusPcruz18'},
         {id: 2, author: 123, body: ' www.linkedin.com/in/matheus-p-77569b138'},
         {id: 3, author: 123, body: 'Olá, meu nome é Matheus Pereira. Tenho 21 anos, São Sebastião - SP'},
-        {id: 3, author: 123, body: 'Sou formado em Informática para internet, pelo Instituto Federal de São Paulo'},
-        {id: 3, author: 123, body: 'E atualmente curso Análise e Desenvolvimentos de Sistemas'}
+        {id: 3, author: 123, body: 'Sou formado em Informática para internet pelo Instituto Federal de São Paulo'},
+        {id: 3, author: 123, body: 'E atualmente curso Análise e Desenvolvimentos de Sistemas ;)'}
     ])
 
     useEffect(() => {

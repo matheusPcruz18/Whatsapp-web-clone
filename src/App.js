@@ -10,6 +10,9 @@ import ChatIcon from '@material-ui/icons/Chat';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import SearchIcon from '@material-ui/icons/Search';
 
+//Me
+import myPhoto from './assets/me.jpg'
+
 //Components
 import ChatIntro from './Components/ChatIntro'
 import ChatWindow from './Components/ChatWindow'
@@ -30,11 +33,15 @@ function App() {
 
     const [theme, setTheme] = useState('light')
 
-    const [chatList, setChatList] = useState([
+    const chatList = [
+        {chatId: 0, author: 123, title: 'WhatsApp Clone', imagem: 'https://img.icons8.com/clouds/2x/whatsapp.png'},
+
         {chatId: 1, author: 123, title: 'Meu GitHub', imagem: 'https://avatars.githubusercontent.com/u/583231?s=460&u=a59fef2a493e2b67dd13754231daf220c82ba84d&v=4'}, 
-        {chatId: 2, author: 123, title: 'Linkedin', imagem: 'https://neilpatel.com/wp-content/uploads/2017/05/LinkedIn.jpg'}, 
-        {chatId: 3, author: 123, title: 'Sobre mim', imagem: 'https://retailx.com/wp-content/uploads/2019/12/iStock-476085198.jpg'}, 
-    ])
+
+        {chatId: 2, author: 123, title: 'Linkedin', imagem: 'https://icons-for-free.com/iconfiles/png/512/linked+in+linkedin+network+social+social+icon+social+media-1320185801369487077.png'}, 
+
+        {chatId: 3, author: 123, title: 'Sobre mim', imagem: myPhoto}, 
+    ]
 
     const [activeChat, setActiveChat] = useState({})
 
