@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="github/whatsLogo.png" alt="test" style="width: 100px"/>
+<img src="github/whatsLogo.png" alt="test" style="width: 50px"/>
 
 </div>
 
